@@ -1,0 +1,191 @@
+<!doctype html>
+
+<!-- BETA PROJECT BY FAUZAN ADYATMA PANGESTU XII RPL 2 -->
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="title" content="SenaBOT" />
+        <meta
+            name="description"
+            content="Simple website Bot, and free for use."
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>SenaBOT | Docs</title>
+        <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="src/images/favicon.ico"
+        />
+        <link rel="stylesheet" href="src/css/index.css" />
+        <link rel="stylesheet" href="src/vendor/remixicon/remixicon.css" />
+        <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.1/dist/sweetalert2.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="homepage">
+                <h2 class="text-title" data-aos="fade-top">SenaBOT</h2>
+                <p class="text-subtitles">
+                    A website with features like an assistant with various
+                    commands, this bot can be used for free
+                </p>
+                <div class="button-box">
+                    <button id="chat" type="button" class="btn">
+                        Get Started
+                    </button>
+                    <a href="#content">
+                        <button id="chat" class="btn btn-black">
+                            Documents
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="wrapper-content" id="content">
+                <div class="about">
+                    <h4 class="text-title">What's is SenaBOT?</h4>
+                    <p class="text-subtitle">
+                        Before that,
+                        <span class="sena-bold"
+                            >Sena was inspired by Vtuber From Indonesia.</span
+                        >
+                        <span class="sena-bold">SenaBOT</span> was made just for
+                        fun. SenaBOT is an artificial AI robot with various
+                        interesting commands.
+                    </p>
+                </div>
+                <div class="grid-features">
+                    <div class="card-box">
+                        <div class="images-box">
+                            <img src="src/images/software.jpg" alt="" />
+                        </div>
+                        <h4 class="card-title">Cek IP With URL</h4>
+                        <p class="card-subtitle">Generate IP from URL</p>
+                        <label class="card-features">+cekip [url]</label>
+                    </div>
+                    <div class="card-box">
+                        <div class="images-box">
+                            <img src="src/images/youtube-card.jpeg" alt="" />
+                        </div>
+                        <h4 class="card-title">Youtube Downloader</h4>
+                        <p class="card-subtitle">Downloader For Youtube</p>
+                        <label class="card-features">+youtube [url]</label>
+                    </div>
+                    <div class="card-box">
+                        <div class="images-box">
+                            <img src="src/images/bot-card.jpeg" alt="" />
+                        </div>
+                        <h4 class="card-title">GPT AI 3</h4>
+                        <p class="card-subtitle">Chat with AI</p>
+                        <label class="card-features">[ketik apa aja]</label>
+                    </div>
+                    <div class="card-box">
+                        <div class="images-box">
+                            <img src="src/images/quotes-card.jpeg" alt="" />
+                        </div>
+                        <h4 class="card-title">Quotes Anime</h4>
+                        <p class="card-subtitle">Random quotes anime</p>
+                        <label class="card-features">+randomquotes-anime</label>
+                    </div>
+                    <div class="card-box">
+                        <div class="images-box">
+                            <img src="src/images/fetch-card.jpg" alt="" />
+                        </div>
+                        <h4 class="card-title">Fetching Website</h4>
+                        <p class="card-subtitle">Fetch HTML on Web</p>
+                        <label class="card-features">+fetch [url] [nama-file]</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div class="copyright-box">
+                    <div class="icon-wrapper">
+                        <div class="icon-box">
+                            <a href="https://github.com/FauzanAPP">
+                                <i class="ri-github-fill"></i>
+                            </a>
+                        </div>
+                        <div class="icon-box">
+                            <a href="https://www.facebook.com/FauzanAPP">
+                                <i class="ri-facebook-fill"></i>
+                            </a>
+                        </div>
+                        <div class="icon-box">
+                            <a href="https://www.instagram.com/fauzan.beginner">
+                                <i class="ri-instagram-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://counterapi.com/c.js" async></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.1/dist/sweetalert2.all.min.js"></script>
+        <script>
+            const chat = document.getElementById("chat");
+            chat.addEventListener("click", () => {
+                chat.setAttribute("disabled", "");
+                chat.innerHTML = '<div class="loading"></div>';
+                setTimeout(() => {
+                    chat.innerHTML = "Chat Bot";
+
+                    if (localStorage.getItem("verified") == true) {
+                        return (window.location.href = "app/sena.html");
+                    }
+
+                    localStorage.setItem("verified", false);
+                    localStorage.setItem(
+                        "avatar",
+                        "../src/images/profile.jpeg"
+                    );
+                    localStorage.setItem("username", "Fauzan APP");
+                    localStorage.setItem("bio", "Programming | Technology");
+
+                    window.location.href = "app/sena.html";
+                }, 5000);
+            });
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+        <script>
+            var textWrapper = document.querySelector(".text-subtitles");
+            textWrapper.innerHTML = textWrapper.textContent.replace(
+                /\S/g,
+                "<span class='letter'>$&</span>"
+            );
+
+            anime
+                .timeline({ loop: true })
+                .add({
+                    targets: ".text-subtitles .letter",
+                    targets: ".text-subtitles .letter",
+                    targets: ".text-subtitles .letter",
+                    scale: [4, 1],
+                    opacity: [0, 1],
+                    translateZ: 0,
+                    easing: "easeOutExpo",
+                    duration: 950,
+                    delay: (el, i) => 70 * i
+                })
+                .add({
+                    targets: ".text-subtitles",
+                    opacity: 0,
+                    duration: 100,
+                    easing: "easeOutExpo",
+                    delay: 1000
+                });
+        </script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </body>
+</html>
