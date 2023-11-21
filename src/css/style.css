@@ -223,6 +223,7 @@ body::-webkit-scrollbar {
     text-align: center;
     cursor: pointer;
     animation: btn 5s infinite;
+    -webkit-animation: btn 5s infinite;
 }
 
 @keyframes btn {
