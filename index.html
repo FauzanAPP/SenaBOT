@@ -39,7 +39,7 @@
                     <button id="chat" type="button" class="btn">
                         Get Started
                     </button>
-                    <a href="#content">
+                    <a href="/">
                         <button id="chat" class="btn btn-black">
                             Documents
                         </button>
@@ -98,7 +98,9 @@
                         </div>
                         <h4 class="card-title">Fetching Website</h4>
                         <p class="card-subtitle">Fetch HTML on Web</p>
-                        <label class="card-features">+fetch [url] [nama-file]</label>
+                        <label class="card-features"
+                            >+fetch [url] [nama-file]</label
+                        >
                     </div>
                 </div>
             </div>
@@ -137,7 +139,9 @@
                     chat.innerHTML = "Chat Bot";
 
                     if (localStorage.getItem("verified") == true) {
-                        return (window.location.href = "app/sena.html");
+                        window.location.href = "app/sena.html";
+                        chat.removeAttribute("disabled")
+                        return
                     }
 
                     localStorage.setItem("verified", false);
@@ -149,6 +153,7 @@
                     localStorage.setItem("bio", "Programming | Technology");
 
                     window.location.href = "app/sena.html";
+                    chat.removeAttribute("disabled", "");
                 }, 5000);
             });
         </script>
