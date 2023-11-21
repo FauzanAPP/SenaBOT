@@ -474,8 +474,7 @@ ${output}
     const DEVELOPER_ACCESS_TOKEN = "II3lYJK8yChs7uaj2Z7lXeylSfbML44y";
 
     fetch(
-        `https://api.xcodeteam.xyz/api/artificial-intelligence/chatgpt-3?api_key=sk-dw0sszo45yzw2qxfy&question=${input}&custom_question=author&custom_answer=Fauzan APP
-        `
+        `https://api.xcodeteam.xyz/api/artificial-intelligence/chatgpt-3?api_key=sk-dw0sszo45yzw2qxfy&question=${input}&custom_question=Author&custom_answer=FauzanAPP`
     )
         /*  fetch(
         `https://api.clayzaaubert.my.id/api/ai/characterai?text=${input}&name=Nekoyama Sena&apikey=7xv5xp4B4X`
@@ -486,7 +485,7 @@ ${output}
             main.removeChild(document.getElementById(`sena-typing${i}`));
             i += 1;
 
-            const message = response.data.message;
+            const message = response.data.answer;
 
             setChat(`senachat${i}`, `wrappersena${i}`, message);
             button.removeAttribute("disabled");
