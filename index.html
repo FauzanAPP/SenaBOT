@@ -6,17 +6,21 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="title" content="SenaBOT" />
         <meta
             name="description"
             content="Simple website Bot, and free for use."
         />
+        <meta
+            name="keywords"
+            content="html,css,js,javascript,bot,botwa,script bot,senabot,SenaBot,Sena Bot"
+        />
+        <meta name="author" content="Fauzan Adyatma Pangestu" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>SenaBOT | Docs</title>
         <link
             rel="shortcut icon"
             type="image/x-icon"
-            href="src/images/favicon.ico"
+            href="https://i.ibb.co/Z8GXjhj/favicon.jpg"
         />
         <link rel="stylesheet" href="src/css/index.css" />
         <link rel="stylesheet" href="src/vendor/remixicon/remixicon.css" />
@@ -102,6 +106,23 @@
                             >+fetch [url] [nama-file]</label
                         >
                     </div>
+                    <div class="card-box">
+                        <div class="images-box">
+                            <img
+                                style="
+                                    background-color: white;
+                            
+                                "
+                                src="src/images/shell-card.png"
+                                alt=""
+                            />
+                        </div>
+                        <h4 class="card-title">Web.sh</h4>
+                        <p class="card-subtitle">Generate pack code for web</p>
+                        <label class="card-features"
+                            ><span style="color: red">Coming Soon</span></label
+                        >
+                    </div>
                 </div>
             </div>
 
@@ -140,8 +161,8 @@
 
                     if (localStorage.getItem("verified") == true) {
                         window.location.href = "app/sena.html";
-                        chat.removeAttribute("disabled")
-                        return
+                        chat.removeAttribute("disabled");
+                        return;
                     }
 
                     localStorage.setItem("verified", false);

@@ -204,8 +204,8 @@ function onClick() {
     /* Fitur */
 
     /** CEK IP **/
-    let arrayValueForIP = input.split("-");
-    if (arrayValueForIP[0] == "cekip") {
+    let arrayValueForIP = input.split(" ");
+    if (arrayValueForIP[0] == "+cekip") {
         if (arrayValueForIP[1] == "") {
             main.removeChild(myChat);
             Swal.fire({
@@ -297,10 +297,11 @@ function onClick() {
                         }
                     }
 
+                    const getYtVideos = data.result.getVideo[0];
                     getYtAudioDownload = getYtVideo[getYtAudio].url;
                     const getYtAudioQuality = getYtVideo[getYtAudio].quality;
-                    const getYtQuality = getYtVideo.quality;
-                    const getYtSize = getYtVideo.formattedSize;
+                    const getYtQuality = getYtVideos.quality;
+                    const getYtSize = getYtVideos.formattedSize;
 
                     setChat(
                         `senachat-youtube${i}`,
@@ -313,7 +314,7 @@ function onClick() {
                         <p class="yt-dl-duration">${getYtSize}</p>
                         </div>
                         <button onclick="comingSoon()" type="button" class="yt-dl-btn-cs">Download Video ${getYtQuality}</button>
-                        <button onclick="ytMusicDownload()" type="button" class="yt-dl-btn-cs succes-btn">Download Audio ${getYtAudioQuality}</button>
+                        <button onclick="comingSoon()" type="button" class="yt-dl-btn-cs succes-btn">Download Audio ${getYtAudioQuality}</button>
                     `
                     );
                     button.removeAttribute("disabled");
@@ -435,6 +436,24 @@ ${output}
         return;
     }
 
+    /** web.sh **/
+    const getWebShInput = input.split(" ");
+    if (getWebShInput[0] == "+websh") {
+        if (getWebShInput[1] == "" || getWebShInput[1] == null) {
+            return Swal.fire({
+                icon: "error",
+                title: "Note",
+                text: "Data tidak boleh kosong"
+            });
+        }
+
+        return Swal.fire({
+            icon: "info",
+            title: "Info",
+            text: "Maintenance"
+        });
+    }
+
     /* End Fitur */
 
     const button = document.getElementById("btn-chat");
@@ -482,7 +501,6 @@ ${output}
             main.removeChild(document.getElementById(`sena-typing${i}`));
             button.removeAttribute("disabled");
             button.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
-        
 
             console.error(error);
         });

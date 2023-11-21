@@ -190,9 +190,12 @@ body::-webkit-scrollbar {
     background-color: transparent;
     border: 1px solid var(--text-color);
     border-radius: 6px;
-    padding: 7px;
+    padding-left: 7px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 32px;
     color: var(--text-color);
-    font-family: "DM Sans";
+    font-family: "Roboto";
     font-weight: 600;
     position: relative;
 }
@@ -219,6 +222,21 @@ body::-webkit-scrollbar {
     align-items: center;
     text-align: center;
     cursor: pointer;
+    animation: btn 5s infinite;
+}
+
+@keyframes btn {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .info-box {
@@ -344,8 +362,7 @@ body::-webkit-scrollbar {
 }
 
 .succes-btn {
-    background-color: #18ff35;
-    color: black;
+    background-color: red;
 }
 
 .wrapper-yt-dl {
